@@ -1,0 +1,24 @@
+.result-page {
+  background-color: #ce2829;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.result-content {
+  width: 100%;
+  text-align: center;
+}
+
+.result-logo {
+  margin-top: 40px;
+}
+
+.result-message {
+  display: flex;
+  margin-top: 300px;
+  font-size: 45px;
+  color: white;
+  font-family: "Quattrocento", serif;
+  font-weight: 100;
+}
