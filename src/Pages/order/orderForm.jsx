@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import "./orderForm.css";
 
 export default function OrderForm() {
@@ -185,6 +185,7 @@ export default function OrderForm() {
         </div>
 
         <hr></hr>
+
         <button type="submit">Sipariş Ver</button>
       </form>
     </div>

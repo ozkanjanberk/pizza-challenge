@@ -1,4 +1,3 @@
-import "./App.css";
 import { Home } from "./Pages/home/home";
 import { Route } from "react-router-dom/cjs/react-router-dom.min";
 import OrderForm from "./Pages/order/orderForm";
