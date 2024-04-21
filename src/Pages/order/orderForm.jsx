@@ -73,9 +73,12 @@ export default function OrderForm() {
       .post("https://reqres.in/api/pizza", formData)
       .then((res) => {
         console.log(res.data);
-        history.push("/result");
+        history.push({
+          pathname: "/result",
+          state: { formData: formData },
+        });
       })
-      .catch((res) => console.error(res.data));
+      .catch((error) => console.error(error));
   }
 
   return (
