@@ -145,7 +145,7 @@ export function Home() {
             </div>
           </div>
           <div className="bestItem2">
-            <h3>Terminal Pizza</h3>
+            <h3>Position Absolute Acı Pizza</h3>
             <div className="itemRatings2">
               <p>4.9</p>
               <p>(200)</p>
@@ -153,7 +153,7 @@ export function Home() {
             </div>
           </div>
           <div className="bestItem3">
-            <h3>Terminal Pizza</h3>
+            <h3>useEffect Tavuklu Burger</h3>
             <div className="itemRatings3">
               <p>4.9</p>
               <p>(200)</p>

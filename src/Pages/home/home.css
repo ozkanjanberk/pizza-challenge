@@ -51,6 +51,10 @@
   color: black;
 }
 
+.hero a:hover {
+  background-color: #d1a503;
+}
+
 .navbar {
   padding-left: 10vw;
   padding-right: 10vw;
@@ -69,10 +73,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 5vh;
+  min-width: 8vw;
+}
+
+.navbar ul li:hover {
+  background-color: #fdc913;
+}
+
+.navbar ul li img {
+  padding-left: 3px;
 }
 
 .navbar ul li a {
-  padding-left: 1vw;
+  padding-left: 10px;
   text-decoration: none;
   align-items: center;
 }
@@ -379,6 +393,11 @@
   text-decoration: none;
   color: black;
   padding-left: 1vw;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.navbar2 ul li:hover {
+  background-color: #fdc913;
 }
 
 .navbar2 ul li {
