@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import "./orderForm.css";
+import { Footer } from "../../components/footer";
 
 export default function OrderForm() {
   const [formData, setFormData] = useState({
@@ -10,7 +11,7 @@ export default function OrderForm() {
     boyut: "",
     doughThick: "",
     toppings: [],
-    adet: 0,
+    adet: 1,
   });
 
   const [errors, setErrors] = useState({});
@@ -56,6 +57,20 @@ export default function OrderForm() {
     }
   };
 
+  const handleDecrease = () => {
+    setFormData((prevData) => ({
+      ...prevData,
+      adet: prevData.adet > 0 ? prevData.adet - 1 : 0,
+    }));
+  };
+
+  const handleIncrease = () => {
+    setFormData((prevData) => ({
+      ...prevData,
+      adet: prevData.adet + 1,
+    }));
+  };
+
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -86,59 +101,72 @@ export default function OrderForm() {
       <div className="header-area">
         <img src="Assets/mile1-assets/logo.svg" alt="Logo" />
       </div>
+      <div className="formBanner">
+        <div className="formBannerContent">
+          <h2>Position Absolute Acı Pizza</h2>
+          <p>85.50₺</p>
+          <p>
+            Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı
+            pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli
+            diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun
+            ateşinde bir fırında yüksek sıcaklıkta pişirilen genellikle
+            yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan
+            kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta
+            denir.
+          </p>
+        </div>
+      </div>
       <form onSubmit={handleSubmit}>
-        <div>
-          <p>Boyut Seç</p>
-          <label>
-            <input
-              name="boyut"
-              type="radio"
-              value="Küçük"
+        <div className="formFirstRow">
+          <div className="formRadio">
+            Boyut Seç
+            <label>
+              <input
+                name="boyut"
+                type="radio"
+                value="S"
+                onChange={handleChange}
+              />
+              S
+            </label>
+            <label>
+              <input
+                name="boyut"
+                type="radio"
+                value="M"
+                onChange={handleChange}
+              />
+              M
+            </label>
+            <label>
+              <input
+                name="boyut"
+                type="radio"
+                value="Büyük"
+                onChange={handleChange}
+              />
+              L
+            </label>
+          </div>
+
+          <div>
+            <label className="selectBox">Hamur Seç</label>
+            <br></br>
+            <select
+              name="doughThick"
+              value={formData.doughThick}
               onChange={handleChange}
-            />
-            Küçük
-          </label>
-
-          <label>
-            <input
-              name="boyut"
-              type="radio"
-              value="Orta"
-              onChange={handleChange}
-            />
-            Orta
-          </label>
-
-          <label>
-            <input
-              name="boyut"
-              type="radio"
-              value="Büyük"
-              onChange={handleChange}
-            />
-            Büyük
-          </label>
+            >
+              <option disabled selected value="">
+                Hamur Kalınlığı
+              </option>
+              <option value="ekstraInce">Ekstra İnce</option>
+              <option value="ince">İnce</option>
+              <option value="normal">Normal</option>
+              <option value="ekstraKalin">Kalın</option>
+            </select>
+          </div>
         </div>
-
-        <div>
-          <label>Hamur Seç</label>
-        </div>
-        <div>
-          <select
-            name="doughThick"
-            value={formData.doughThick}
-            onChange={handleChange}
-          >
-            <option disabled selected value="">
-              Hamur Kalınlığı
-            </option>
-            <option value="ekstraInce">Ekstra İnce</option>
-            <option value="ince">İnce</option>
-            <option value="normal">Normal</option>
-            <option value="ekstraKalin">Kalın</option>
-          </select>
-        </div>
-
         <div>
           <label>Ek Malzemeler:</label>
           <br />
@@ -156,10 +184,10 @@ export default function OrderForm() {
           ))}
         </div>
 
-        <div>
+        <div className="name">
           <label htmlFor="name">İsminiz</label>
           <div>
-            <input
+            <textarea
               type="text"
               name="isim"
               id="name"
@@ -188,9 +216,40 @@ export default function OrderForm() {
         </div>
 
         <hr></hr>
+        <div className="orderArea">
+          <div className="orderCounter">
+            <button type="button" onClick={handleDecrease}>
+              -
+            </button>
+            <p>{formData.adet}</p>
+            <button type="button" onClick={handleIncrease}>
+              +
+            </button>
+          </div>
 
-        <button type="submit">Sipariş Ver</button>
+          <div className="formPrice">
+            <h3>Sipariş Toplamı</h3>
+            <div className="formSelectionPrice">
+              <p>Seçimler:</p>
+              <p>{formData.toppings.length * 5 * formData.adet}₺</p>
+            </div>
+            <div className="formTotalPrice">
+              <p>Toplam: </p>
+              <p>
+                {formData.toppings.length * 5 * formData.adet +
+                  formData.adet * 85.5}
+                ₺
+              </p>
+            </div>
+            <div className="buttonLocation">
+              <button className="orderButton" type="submit">
+                Sipariş Ver
+              </button>
+            </div>
+          </div>
+        </div>
       </form>
+      <Footer />
     </div>
   );
 }

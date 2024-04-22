@@ -7,7 +7,7 @@ import Burger from "./3.svg";
 import Kizartmalar from "./4.svg";
 import FastFood from "./5.svg";
 import Gazli from "./6.svg";
-import { Footer } from "../../components/footer";
+import { Footer } from "../../components/footer.jsx";
 
 export function Home() {
   return (

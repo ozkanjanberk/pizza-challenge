@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&display=swap");
+
 .body {
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
@@ -19,14 +21,13 @@
   border-radius: 8px 8px 0 0;
   width: 100%;
   height: 10vh;
-  margin-bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
 .header-area img {
-  margin-top: 20px;
+  padding-top: 3vh;
 }
 
 form {
@@ -55,11 +56,166 @@ button:not(:hover) {
   background-color: #fdc913;
 }
 
-textarea[name="isim"],
-textarea[name="not"] {
-  width: calc(100% / 3);
-  padding: 10px;
+.orderArea {
+  font-size: 1vw;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5vh;
+  padding-top: 2vh;
+  padding-left: 1vw;
+}
+
+.formBanner {
+  background-color: #f2f2f2;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formBanner h2 {
+  color: #292929;
+}
+
+.formBannerContent {
+  background-image: url("./form-banner.png");
+  min-height: 65vh;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  min-width: 35vw;
+  max-width: 35vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-family: "Barlow", sans-serif;
+}
+
+.formBannerContent p:nth-child(2) {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.formBanner p:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: large;
+  color: #5f5f5f;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  font-size: 1vw;
+  gap: 3vh;
+  font-family: "Barlow", sans-serif;
+}
+
+input[type="radio"] {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-block;
+  line-height: 50px;
+  background-color: #ce2829;
+  list-style: none;
+  appearance: none;
+}
+
+.orderCounter {
+  gap: 5px;
+  display: flex;
+  justify-content: flex-start;
+  background-color: #f2f2f2;
+}
+
+.buttonLocation {
+  display: flex;
+  justify-content: center;
+}
+
+.orderButton {
+  font-family: "Barlow", sans-serif;
+  font-size: 1.5vh;
+  min-width: 11vw;
+  display: flex;
+  justify-content: center;
+}
+
+.formPrice {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-left: 50%;
+}
+
+.formSelectionPrice {
+  display: flex;
+  font-family: "Barlow", sans-serif;
+  color: #5f5f5f;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.formTotalPrice {
+  color: #ce2829;
+  font-family: "Barlow", sans-serif;
+  display: flex;
+  justify-content: space-around;
+}
+
+.formPrice h3 {
+  font-family: "Barlow", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.formFirstRow {
+  display: flex;
+  justify-content: space-around;
+}
+
+.formRadio {
+  display: flex;
+  flex-direction: row;
+}
+
+.selectBox {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  min-width: 15vw;
+  font-size: 1vw;
+  width: 10vw;
+}
+
+select {
+  font-size: 1vw;
+  background-color: #faf7f2;
+  color: #5f5f5f;
+}
+
+textarea {
+  padding: 0;
+  margin: 0;
+}
+
+textarea {
+  border: 2px solid #ccc;
   border-radius: 8px;
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
+  border-style: solid;
+  border-color: #ccc;
+  padding: 10px;
+  height: 7vh;
+  overflow-wrap: break-word;
+  width: 95%;
+  font-size: 16px;
+  background-color: #f7f7f7;
+  transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+  border-color: #66afe9;
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
 }
